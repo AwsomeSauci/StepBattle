@@ -5,14 +5,13 @@ using System;
 
 public class EventController : MonoBehaviour
 {
-    public static event Action StepPassed;
-    public static event Action PlayerStepEnded;
-    public static event Action<BaseAction> ActionSelected;
-    public static event Action<Unit> UnitDied;
-    public static event Action<EnemyUnit> EnemyUnitDied;
-    public static event Action ActionUsed;
-    public static event Action EnemyQuene;
-    public static event Action EnemyQueneEnd;
+    public static event Action StepPassed;//ивент пройденного хода
+    public static event Action PlayerStepEnded;//шаг игрока завершен
+    public static event Action<BaseAction> ActionSelected;//отображен навык юнита игрока
+    public static event Action<Unit> UnitDied;//смерть юнита
+    public static event Action ActionUsed;//применено действие
+    public static event Action EnemyQuene;//начало очереди врага
+    public static event Action EnemyQueneEnd;//противник сделал все атаки
 
     public static void OnPlayerStepEnded()
     {

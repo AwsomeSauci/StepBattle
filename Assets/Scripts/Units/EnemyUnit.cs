@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyUnit : Unit
 {
     private AtackAction _action;
-    private WaitForSeconds _sleep = new WaitForSeconds(0.1f);
 
     void Start()
     {

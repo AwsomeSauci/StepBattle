@@ -11,10 +11,10 @@ public class HPController : MonoBehaviour
     [SerializeField] private GameObject _poiseIcon;
 
     private Unit _thisUnit;
-    private int _poiseSteps = 0;
-    private int _protectSteps = 0;
-    private int _protectCnt = 0;
-    private int _poisePower = 0;
+    private int _poiseSteps = 0;//сколько шагов осталось действовать яду
+    private int _protectSteps = 0;//сколько шагов осталосьь действовать защите
+    private int _protectCnt = 0;//количество очков защиты
+    private int _poisePower = 0;//урон от отравления
     private const string _plusSymbol = "+";
 
     void Start()
@@ -49,10 +49,12 @@ public class HPController : MonoBehaviour
     {
         ChangeHP(damage);
     }
+
     public void HealAction(int count)
     {
         ChangeHP(count);
     }
+
     public void PoiseAction(int damage, int time)
     {
         _poiseIcon.SetActive(true);
@@ -60,6 +62,7 @@ public class HPController : MonoBehaviour
         _poiseSteps = time-1;
         ChangeHP(_poisePower);
     }
+
     public void ProtectAction(int count, int time)
     {
         _protectSteps = time;

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AtackAction : BaseAction
 {
-
     public override bool PerformAction(GameObject unitFrom, GameObject unitTarget)
     {
         if (unitFrom.tag == _enemyTag)

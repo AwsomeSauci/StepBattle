@@ -8,12 +8,12 @@ public class PlayerUnitController : Unit
 
     private BaseAction _crntAction;
     private int _tmp;
-    private WaitForSeconds _sleep = new WaitForSeconds(0.1f);
-    private bool _actionUsed = false;
+    
+    private bool _actionUsed = false;//флаг использована ли способность в текущем ходу
 
     void Start()
     {
-        StartCoroutine(StartSleep());        
+        StartCoroutine(StartSleep());//задержка перед инициализацией, чтобы рандом отработал корректно
         EventController.StepPassed += SelectAction;
     }
 
